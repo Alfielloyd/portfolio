@@ -1,6 +1,6 @@
-#Welcome to my portfolio!
+#Welcome to my portfolio#
 
-##About me
+##About me##
 
 
-###Thanks for visiting! 
+###Thanks for visiting!###
