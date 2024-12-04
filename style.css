@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Changa+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-
+/* General */ 
 main {
-    background-color: antiquewhite;
+    background-color: #FAFAFA;
 }
 
 h2 {
-    font-family: 'Droid Sans', sans-serif;
+    font-family: 'Changa One';
+    font-weight: 100;
     font-size: 4rem;
     text-align: center;
-    color: #000000;
+    color: #333333;
 }
 
 
@@ -20,17 +21,22 @@ body, ul, li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+  }
+
 /* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000; 
+    background-color: #008080; 
+    height: 80px;
     padding: 10px 20px;
     position: sticky;
     top: 0; 
     z-index: 1000; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 nav .logo {
@@ -42,6 +48,7 @@ nav .logo {
 nav .menu-items {
     margin-left: auto;
     display: flex;
+    margin-right: 5%;
 }
 
 nav .menu-items ul {
@@ -54,17 +61,20 @@ nav .menu-items ul {
 
 nav .menu-items ul li {
     align-self: center;
-    color: white;
+    font-family: 'Droid Sans', sans-serif;
+    color: #FAFAFA;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
     transition: color 0.3s ease;
 }
-
+nav .menu-toggle {
+    display: none;
+}
 
 nav .menu-items ul li:hover {
-    color: #f39c12; 
+    color: #333333; 
 }
 /* End of Navigation */
 
@@ -77,7 +87,8 @@ nav .menu-items ul li:hover {
     grid-gap: 20px;
     align-items: center;
     padding: 40px;
-    background-color: #f39c12;
+    padding-bottom: 80px;
+    background-color: #008080;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,7 +96,7 @@ nav .menu-items ul li:hover {
 
 .hero h1 {
     font-size: 8rem;
-    color: aliceblue;
+    color: #FAFAFA;
     padding-left: 5%;
     font-family: 'Changa One';
 }
@@ -106,8 +117,10 @@ nav .menu-items ul li:hover {
 
 .hero-bio {
     font-size: 2rem;
+    font-family: 'Droid Sans', sans-serif;
     padding: 10px;
     margin-left: 10px;
+    color: #FAFAFA;
 }
 
 .hero-btn-container{
@@ -121,9 +134,9 @@ nav .menu-items ul li:hover {
 
 .hero-btn {
     padding: 10px 20px;
-    background-color: #f39c12;
-    color: white;
-    border: 3px solid white;
+    background-color: #FAFAFA;
+    color: #008080;
+    border: 3px solid #FAFAFA;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
@@ -131,14 +144,15 @@ nav .menu-items ul li:hover {
 }
 
 .hero button:hover {
-    background-color: #0056b3;
+    color: #FAFAFA;
+    background-color: #005959;
 }
 /* End of Hero */
 
 /* Project Showcase */
 
 .projects {
-    background-color: antiquewhite;
+
     padding: 0;
 }
  
@@ -254,10 +268,6 @@ nav .menu-items ul li:hover {
 
 /* About Me */
 
-.about {
-    background-color: antiquewhite;
-}
-
 .about-container {
     display: grid;
     grid-template-columns: 1fr 2fr; 
@@ -278,8 +288,13 @@ nav .menu-items ul li:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: center;   
     margin: 0 80px;
+}
+
+.profile p {
+    color: #333333;
+    font-family: 'Droid Sans', sans-serif; 
 }
 
 .profile-img {
@@ -307,7 +322,7 @@ nav .menu-items ul li:hover {
 .video-carousel video {
     flex: 1 1 calc(50% - 20px); 
     max-width: 100%;
-    min-width: 320px ;
+    min-width: 300px ;
     height: auto;
     max-height: 600px;
     border-radius: 10px;
@@ -318,7 +333,8 @@ nav .menu-items ul li:hover {
 }
 .video-carousel video:hover {
     transform: scale(1.1); 
-    filter: brightness(1.2); 
+    filter: brightness(1.2);
+    z-index: 2; 
 }
 
 .video-carousel video:not(:hover) {
@@ -335,16 +351,173 @@ nav .menu-items ul li:hover {
 /* End of About Me */
 
 /* Contact Me */
-#contact {
-    background-color: antiquewhite;
-}
 
 .contact-container {
     display: flex;
-    position: relative;
+    flex-direction: row;
+    gap: 20px;
+    margin: 40px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    align-items: stretch;
+    height: auto;
+    overflow: hidden;
+}
+
+.socials-container,
+.contact-form-container {
+    flex: 1; 
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: inherit;
+    min-height: 650px;
+}
+
+/* Socials Container */
+.socials-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.socials-container img.contact-logo {
+    width: 100px;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.socials-container p {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 1rem;
+    color: #666666;
+    margin: 0 20px 20px;
+}
+
+.socials-container ul.social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socials-container ul.social-list li {
+    font-family: 'Droid Sans', sans-serif;
+    color: #333333;
+}
+
+/* Contact Form Container */
+
+.contact-form-container {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.contact-form-container h3 {
+    margin: 10px 0;
+    font-family: 'Changa One';
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #333333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form-container .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-form-container .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-form-container label {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 1rem;
+    color: #333333;
+    margin-top: 10px;
+}
+
+.required {
+    color: rgba(255, 0, 0, 0.855);
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Droid Sans', sans-serif;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+.contact-form-container textarea {
+    resize: none;
+}
+
+.contact-form-container input[type="submit"] {
+    width: 100%;
+    background-color: #008080;
+    color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size:  1rem;
+    font-family: 'Changa One';
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-container input[type="submit"]:hover {
+    background-color: #005959;
 }
 
 /* End of Contact Me */
@@ -352,31 +525,40 @@ nav .menu-items ul li:hover {
 /* Footer*/
 
 footer {
+    margin-top: 40px;
     display: flex;
-    position: relative;
-    padding: 30px 200px;
-    background-color: #333;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 20px;
+    background-color: #008080;
+    color: #FAFAFA;
+    text-align: center;
 }
+
 footer ul {
     display: flex;
-    gap: 30px; 
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
 }
+
 footer li {
-    color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
+    font-family: 'Droin Sans', sans-serif;
     text-transform: uppercase;
     cursor: pointer;
     transition: color 0.3s ease;
-    margin-right: 40px;
+    margin: 10px 0;
 }
 
-
-footer ul li:hover {
-    color: #f39c12; 
+footer li:hover {
+    color: #333333;
 }
+
 /* End of Footer */
 
 /* Media Queries */
@@ -392,7 +574,6 @@ footer ul li:hover {
         display: grid;
         grid-template-columns: repeat(1, 1fr); 
         gap: 40px; 
-        overflow: hidden;
     }
 
     .video-carousel video {
@@ -401,6 +582,9 @@ footer ul li:hover {
         height: auto;
         justify-content: start;
         overflow: hidden;
+    }
+    .video4 {
+        display: none;
     }
 }
 
@@ -496,16 +680,34 @@ footer ul li:hover {
     .video-carousel video {
         flex: 1 1 calc(100% - 20px); 
     }
-    .video3 video {
+    .video3 {
         display: none;
     }
-    .video4 video {
+    .video4 {
         display: none;
     }
 
-@media (min-width: 769px) {
-    nav .menu-toggle {
-        display: none; 
+    /* Contact */
+    .contact-container {
+        flex-direction: column; 
+    }
+
+    .socials-container,
+    .contact-form-container {
+        width: 100%;
+    }
+
+    /* Footer */
+    footer ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    footer li {
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
     }
 }
 
