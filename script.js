@@ -98,4 +98,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initCarousel(); // Run initialization
-});
+});*/
