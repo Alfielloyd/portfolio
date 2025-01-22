@@ -3,11 +3,11 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - main  # Replace with your branch name if different
+      - main 
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04  # Explicitly set Ubuntu version to avoid warnings
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -19,5 +19,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
           local-dir: ./
           server-dir: /home/alfiqolg/public_html/ 
